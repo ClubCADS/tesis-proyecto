@@ -1,34 +1,75 @@
-'use client'
-import React from "react";
-import { Model } from "survey-core";
-import { Survey } from "survey-react-ui";
-import "survey-core/defaultV2.min.css";
-import { json } from "../app/api/json/route";
-import { createClient } from "../utils/supabase/client"; // Asegúrate de que la ruta sea correcta
+'use client';
+
+import React from 'react';
+import { Model } from 'survey-core';
+import { Survey } from 'survey-react-ui';
+import 'survey-core/defaultV2.min.css';
+import { json } from '../app/api/json/route';
 
 function SurveyComponent() {
-    const survey = new Model(json);
-    const supabase = createClient(); // Crear instancia del cliente de Supabase
+  const survey = new Model(json);
 
-    survey.onComplete.add(async (sender, options) => {
-        const surveyData = sender.data;
+  survey.onComplete.add(async (sender) => {
+    const surveyData = sender.data;
 
-        // Insertar los datos en Supabase
-        const { data, error } = await supabase
-            .from('survey_responses') // Reemplaza 'encuestas' con el nombre de tu tabla
-            .insert([surveyData]);
+    try {
+      const response = await fetch('/api/save-survey', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(surveyData),
+      });
 
-        if (error) {
-            console.error("Error al guardar la encuesta en Supabase:", error);
-        } else {
-            console.log("Encuesta guardada en Supabase:", data);
-        }
-    });
+      const result = await response.json();
 
-    return (<Survey model={survey} />);
+      if (!response.ok) {
+        console.error('Error al guardar la encuesta en Supabase:', result);
+      } else {
+        console.log('Encuesta guardada exitosamente:', result);
+      }
+    } catch (error) {
+      console.error('Error al enviar la encuesta:', error);
+    }
+  });
+
+  return <Survey model={survey} />;
 }
 
 export default SurveyComponent;
+
+
+// 'use client'
+// import React from "react";
+// import { Model } from "survey-core";
+// import { Survey } from "survey-react-ui";
+// import "survey-core/defaultV2.min.css";
+// import { json } from "../app/api/json/route";
+// import { createClient } from "../utils/supabase/client"; // Asegúrate de que la ruta sea correcta
+
+// function SurveyComponent() {
+//     const survey = new Model(json);
+//     const supabase = createClient(); // Crear instancia del cliente de Supabase
+
+//     survey.onComplete.add(async (sender, options) => {
+//         const surveyData = sender.data;
+
+//         // Insertar los datos en Supabase
+//         const { data, error } = await supabase
+//             .from('survey_responses') // Reemplaza 'encuestas' con el nombre de tu tabla
+//             .insert([surveyData]);
+
+//         if (error) {
+//             console.error("Error al guardar la encuesta en Supabase:", error);
+//         } else {
+//             console.log("Encuesta guardada en Supabase:", data);
+//         }
+//     });
+
+//     return (<Survey model={survey} />);
+// }
+
+// export default SurveyComponent;
 
 
 
