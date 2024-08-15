@@ -1,13 +1,28 @@
-import SurveyComponent from "@/components/SurveyComponent";
+import dynamic from 'next/dynamic';
 
-export default async function Index() {
+const DynamicSurveyComponent = dynamic(() => import('@/components/SurveyComponent'), {
+  ssr: false,
+});
 
-
+export default function Index() {
   return (
     <div className="w-full flex flex-col items-center">
-
-      <SurveyComponent></SurveyComponent>
-
+      <DynamicSurveyComponent />
     </div>
   );
 }
+
+
+// import SurveyComponent from "@/components/SurveyComponent";
+
+// export default async function Index() {
+
+
+//   return (
+//     <div className="w-full flex flex-col items-center">
+
+//       <SurveyComponent></SurveyComponent>
+
+//     </div>
+//   );
+// }
