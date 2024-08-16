@@ -1,0 +1,29 @@
+genero
+Item 1 = Masculino
+Item 2 = Femenino
+Item 4 = Prefiero no decirlo
+
+año
+item 1 = 4A
+item 2 = 4B     
+item 3 = 4C
+item 4 = 5A
+item 5 = 5B
+item 6 = 5C
+item 7 = 6A
+item 8 = 6B
+item 9 = 6C
+
+3. Con que frecuencia participas en actvs deportivas fuera del horario escolar
+
+0 = Nunca   
+Item 2 = Ocasionalmente
+Item 3 = Regularmente
+Item 4 = Frecuentemente
+
+factores_influencia
+item 1 = preferencia personal
+item 2 = influencia de amigos
+item 3 = Interés en el deporte
+item 4 = Disponibilidad de instalaciones y equipos
+item 5 = Apoyo y orientación del profesor
