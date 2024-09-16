@@ -1,29 +1,13 @@
-genero
-Item 1 = Masculino
-Item 2 = Femenino
-Item 4 = Prefiero no decirlo
+Impacto de las Instalaciones y Equipos:
 
-año
-item 1 = 4A
-item 2 = 4B     
-item 3 = 4C
-item 4 = 5A
-item 5 = 5B
-item 6 = 5C
-item 7 = 6A
-item 8 = 6B
-item 9 = 6C
+Pregunta: ¿Cómo afectan las instalaciones y los equipos disponibles tu decisión de participar en un deporte durante las clases de educación física?
+Tipo de respuesta: Comentario abierto.
+Orientación del Profesor:
 
-3. Con que frecuencia participas en actvs deportivas fuera del horario escolar
+Pregunta: ¿En qué medida la orientación y el apoyo del profesor de educación física influyen en tu elección de deporte durante las clases?
+Tipo de respuesta: Selección múltiple (tagbox) con opciones como "Mucho", "Poco", "Nada", y opción de "Otro (especificar)".
 
-0 = Nunca   
-Item 2 = Ocasionalmente
-Item 3 = Regularmente
-Item 4 = Frecuentemente
+Cambios en Preferencias a lo Largo del Tiempo:
 
-factores_influencia
-item 1 = preferencia personal
-item 2 = influencia de amigos
-item 3 = Interés en el deporte
-item 4 = Disponibilidad de instalaciones y equipos
-item 5 = Apoyo y orientación del profesor
+Pregunta: ¿Cambió tu preferencia por ciertos deportes a lo largo del tiempo en el colegio CADS? ¿Qué factores crees que provocaron estos cambios?
+Tipo de respuesta: Comentario abierto.
