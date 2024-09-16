@@ -411,7 +411,7 @@ export const surveyJson = {
         },
         {
           "type": "dropdown",
-          "name": "question1",
+          "name": "condiciones_edilicias_motivan",
           "title": "¿Considera que el estado y las condiciones de las instalaciones deportivas influyen en su decisión al elegir qué deporte practicar?",
           "choices": [
             "Totalmente de acuerdo",
