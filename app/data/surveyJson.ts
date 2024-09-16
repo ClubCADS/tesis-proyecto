@@ -134,7 +134,7 @@ export const surveyJson = {
           "type": "tagbox",
           "name": "motivo_elegis_deporte",
           "visibleIf": "{año} anyof ['4A', '4B', '4C', '6A', '6B', '6C'] and {frecuencia_deporte_semanal} anyof [1, '1-2', 3]",
-          "title": "¿Por qué motivo haces esa elección? Puede seleccionar varias",
+          "title": "¿Por qué motivo haces esa elección?",
           "isRequired": true,
           "choices": [
             "Porque es el deporte que más disfruto",
